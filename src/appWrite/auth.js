@@ -1,6 +1,40 @@
+import { Client } from "appwrite";
 import conf from "../conf/config";
 
-export class AuthService {}
+export class AuthService {
+    client = new Client();
+    account;
+
+    constructor() {
+        this.client
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId)
+        this.account = new Account(this.client)
+    }
+
+    async createAccount({email, password, name}) {
+        try {
+            const userAccount = await this.account.create(ID.unique(), email, password, name)
+            if (userAccount) {
+                //call another method 
+            }
+            else {
+                return userAccount;
+            }
+        } catch (error) {
+            throw error;
+        }
+    }
+
+    async login ({email, password}) {
+        try {
+            await this.account.creatEmailSession(email, password);
+            
+        }
+    }
+}
+
+
 
 const authService = new AuthService()
 
