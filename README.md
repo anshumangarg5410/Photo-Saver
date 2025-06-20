@@ -64,5 +64,5 @@ A secure and elegant 💾 **Photo Saver App** built with modern technologies inc
 ```bash
 git clone https://anshumangarg5410.github.io/Photo-Saver/
 cd PhotoVault
-bun install
-bun run dev
+npm install
+npm run dev
