@@ -5,6 +5,24 @@ export class AuthService {
     client = new Client();
     account;
 
+/*
+NOTE: ACCOUNT OBJECT JO BANAYA UPPAR USMEI USER KA DATA NHI HAI INSTEAD SARE METHODS HAI FOR EG .create, .get etc 
+
+account = {
+  create: async function (id, email, password, name) { ... },
+  createEmailSession: async function (email, password) { ... },
+  get: async function () { ... },
+  updateEmail: async function (email, password) { ... },
+  updateName: async function (name) { ... },
+  updatePassword: async function (password, oldPassword) { ... },
+  getSessions: async function () { ... },
+  deleteSessions: async function () { ... },
+  // ...aur bhi methods from Appwrite Account SDK
+}
+
+
+*/
+
     constructor() {
         this.client
             .setEndpoint(conf.appwriteUrl)
