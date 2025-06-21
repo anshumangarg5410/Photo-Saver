@@ -80,7 +80,7 @@ export default authService
 
 /*
 
-FOR ME 
+FOR ME :-)
 
 :-)
 
@@ -134,4 +134,54 @@ AuthService Flow Summary:
 Now user is signed up and logged in!
 
 
+*/
+
+/*
+🔁 ========== AuthService Flowchart (Appwrite Integration) ==========
+
+[1] Create a client & account instance
+--------------------------------------------------
+client = new Client()
+            .setEndpoint(conf.appwriteUrl)
+            .setProject(conf.appwriteProjectId)
+
+account = new Account(client)
+
+[2] Create an instance of AuthService
+--------------------------------------------------
+const authService = new AuthService()
+
+// Now authService can be used to call all methods like:
+// authService.createAccount(...)
+// authService.login(...)
+
+[3] Methods Available:
+--------------------------------------------------
+
+✅ createAccount({ email, password, name })
+   ├─ Creates new user via account.create(...)
+   ├─ If successful, calls login(...) to log user in
+   └─ Returns session info
+
+✅ login({ email, password })
+   ├─ Calls account.createEmailSession(...)
+   └─ Returns login session data
+
+✅ getCurrentUser()
+   ├─ Calls account.get()
+   └─ Returns current logged-in user (or null if error)
+
+✅ logout()
+   ├─ Calls account.deleteSessions()
+   └─ Logs user out from all sessions
+
+[4] Exported:
+--------------------------------------------------
+export default authService
+→ So you can directly import it and use in any file:
+   import authService from "../appwrite/auth";
+
+====================================================
+🧠 Think of this like a reusable login/signup service
+used across your whole app — powered by Appwrite 🚀
 */
