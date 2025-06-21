@@ -27,10 +27,9 @@ export class AuthService {
     }
 
     async login ({email, password}) {
-        try {
-            await this.account.creatEmailSession(email, password);
-            
-        }
+        // try {
+            // await this.account.creatEmailSession(email, password);
+        // }
     }
 }
 
