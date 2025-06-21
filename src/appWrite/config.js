@@ -40,7 +40,7 @@ this.bucket = {
 
 */
 
-    async createPost({title, slug, content, featuredImage, status, userId}) {
+    async createMemory({title, slug, content, featuredImage, status, userId}) {
         try {
             return await this.databases.createDocument(
                 conf.appwriteDatabaseId,
@@ -56,11 +56,11 @@ this.bucket = {
 
             ) 
         } catch (error) {
-            console.log("Appwrite Server :: CreatePost :: error", error);
+            console.log("Appwrite Server :: CreateMemory :: error", error);
         }
     }
     
-    async updatePost({title, slug, content, featuredImage, status}) {
+    async updateMemory({title, slug, content, featuredImage, status}) {
         try {
             return await this.data.databases.updateDocument(
                 conf.appwriteDatabaseId,
@@ -76,11 +76,11 @@ this.bucket = {
 
             )
         } catch (error) {
-            console.log("Appwrite Server :: updatePost :: error", error);
+            console.log("Appwrite Server :: updateMemory :: error", error);
         }
     }
 
-    async deletePost({slug}) {
+    async deleteMemory({slug}) {
         try {
             await this.databases.deleteDocument(
                 conf.appwriteDatabaseId,
@@ -90,12 +90,12 @@ this.bucket = {
             return true;
 
         } catch (error) {
-            console.log("Appwrite Server :: deletePost :: error", error);
+            console.log("Appwrite Server :: deleteMemory :: error", error);
             return false
         }
     }
 
-    async getPost({slug}) {
+    async getMemory({slug}) {
         try {
             return await this.databases.getDocument(
                 conf.appwriteDatabaseId,
@@ -103,12 +103,12 @@ this.bucket = {
                 slug
             )
         } catch (error) {
-            console.log("Appwrite Server :: getPost :: error", error);
+            console.log("Appwrite Server :: getMemory :: error", error);
             return false
         }
     }
 
-    async getPosts(queries = [Query.equal("status", "active")]) {
+    async getMemory(queries = [Query.equal("status", "active")]) {
         try {
             return await this.databases.listDocuments(
                 conf.appwriteDatabaseId,
@@ -116,7 +116,7 @@ this.bucket = {
                 queries
             )
         } catch (error) {
-            console.log("Appwrite Server :: getPosts :: error", error);
+            console.log("Appwrite Server :: getMemory :: error", error);
             return false
         }
     }
@@ -164,4 +164,3 @@ const service = new Service()
 export default service
 
 
-//will change naming later !! 
