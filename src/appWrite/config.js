@@ -14,6 +14,38 @@ export class Service {
         this.bucket = new Storage(this.client)
     }
 
+/*
+
+for reference::
+
+this.databases = {
+  createDocument(databaseId, collectionId, documentId, data),
+  listDocuments(databaseId, collectionId, queries),
+  getDocument(databaseId, collectionId, documentId),
+  updateDocument(databaseId, collectionId, documentId, data),
+  deleteDocument(databaseId, collectionId, documentId),
+
+  // (Bonus) Advanced:
+  listCollections(databaseId),
+  createCollection(databaseId, collectionId, name, permissions, documentSecurity),
+  updateCollection(databaseId, collectionId, name),
+  deleteCollection(databaseId, collectionId),
+  // and more...
+}
+
+this.bucket = {
+  createFile(bucketId, fileId, file),               // Upload a file
+  listFiles(bucketId, queries),                     // List all files
+  getFile(bucketId, fileId),                        // Get file metadata
+  getFilePreview(bucketId, fileId),                 // Get image/file preview
+  getFileDownload(bucketId, fileId),                // Download file
+  deleteFile(bucketId, fileId),                     // Delete file
+  updateFile(bucketId, fileId, file),               // Replace file
+  // etc.
+}
+
+*/
+
     async createPost({title, slug, content, featuredImage, status, userId}) {
         try {
             return await this.databases.createDocument(

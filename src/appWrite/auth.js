@@ -6,6 +6,7 @@ export class AuthService {
     account;
 
 /*
+
 NOTE: ACCOUNT OBJECT JO BANAYA UPPAR USMEI USER KA DATA NHI HAI INSTEAD SARE METHODS HAI FOR EG .create, .get etc 
 
 account = {
@@ -19,7 +20,6 @@ account = {
   deleteSessions: async function () { ... },
   // ...aur bhi methods from Appwrite Account SDK
 }
-
 
 */
 
