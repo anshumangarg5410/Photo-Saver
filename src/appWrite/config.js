@@ -24,13 +24,7 @@ this.databases = {
   getDocument(databaseId, collectionId, documentId),
   updateDocument(databaseId, collectionId, documentId, data),
   deleteDocument(databaseId, collectionId, documentId),
-
-  // (Bonus) Advanced:
-  listCollections(databaseId),
-  createCollection(databaseId, collectionId, name, permissions, documentSecurity),
-  updateCollection(databaseId, collectionId, name),
-  deleteCollection(databaseId, collectionId),
-  // and more...
+  and more...
 }
 
 this.bucket = {
@@ -41,7 +35,7 @@ this.bucket = {
   getFileDownload(bucketId, fileId),                // Download file
   deleteFile(bucketId, fileId),                     // Delete file
   updateFile(bucketId, fileId, file),               // Replace file
-  // etc.
+  etc.
 }
 
 */
